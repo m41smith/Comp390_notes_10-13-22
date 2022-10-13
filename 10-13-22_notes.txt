@@ -1,0 +1,27 @@
+use request function to get data from NASA site
+
+bounding boxes = {'region_name': (geolocation bounding box)}
+    will be provided for us
+bounding box(left long, bottom lat, right long, top lat)
+
+use json to convert data to lists of dictionaries
+loop through json data once
+check if entry does have a geolocation
+    if no, skip to next entry
+    if yes, extract geolocation(lat, long)
+        check if lat is within bounding box range (if meteorite doesn't fit into any of the 7 boxes, move to next entry)
+            if no, check next bounding box
+            if yes, check if long fit within bounding box range
+                if no, move on to the next box
+                if yes, extract (name, mass, lat, long)
+                    insert the (name, mass, lat, long) into the appropriate table
+
+connect to database
+do error checking (try, except)
+create 7 region tables
+database will only have 3 columns (Name, Mass, geolocation)
+make cursor object
+db_connection.commit()
+db_connection.close()
+
+justify each function with doc string ("""doc string""")
