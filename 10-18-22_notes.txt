@@ -1,0 +1,5 @@
+'git init' creates git repository folder in project
+
+'git commit -m "first commit"' takes snapshot and commits to git with message
+
+'git push origin main' pushes current commit to GitHub
